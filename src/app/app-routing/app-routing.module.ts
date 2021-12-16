@@ -11,21 +11,16 @@ const routes: Routes = [
   // {path: '', component:Dashboard1Component},
   // {path: '#', component:Dashboard1Component},
 
-  {path: 'Dashboard-1', component: Dashboard1Component },
-  {path: 'Dashboard-2', component: Dashboard2Component },
-  {path: 'Dashboard-3', component: Dashboard3Component },
-  {path: 'Dashboard-4', component: Dashboard4Component },
-
- 
-  
+  { path: 'Dashboard-1', component: Dashboard1Component },
+  { path: 'Dashboard-2', component: Dashboard2Component },
+  { path: 'Dashboard-3', component: Dashboard3Component },
+  { path: 'Dashboard-4', component: Dashboard4Component },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule, RouterModule.forRoot(routes)
-  ],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 export const routingcomponents = [AdminDashboardComponent];
