@@ -1,0 +1,34 @@
+<!-- <app-dashboard1></app-dashboard1> -->
+
+
+<!-- sidenav -->
+<mat-toolbar color='primary'>
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+        </button>
+        <h1>Admin Dashboard</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side">
+        <mat-nav-list>
+            <!-- <a href=""><img src = "../admin-dashboard//dashboard1//user-circle-regular.jpg" alt="Avatar"/></a> -->
+            <a mat-list-item [routerLink]="['/Dashboard-1']" ><span style="font-weight: bold;">Apexcharts</span></a>
+            <a mat-list-item [routerLink]="['/Dashboard-2']" ><span style="font-weight: bold;">Calender</span></a>
+            <a mat-list-item [routerLink]="['/Dashboard-3']" ><span style="font-weight: bold;">Dashboard 3</span></a>
+            <a mat-list-item [routerLink]="['/Dashboard-4']" ><span style="font-weight: bold;">Dashboard 4</span></a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 93vh;">
+
+            <router-outlet>    
+            </router-outlet>
+
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
