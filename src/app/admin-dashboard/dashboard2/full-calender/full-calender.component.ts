@@ -68,7 +68,7 @@ export class FullCalenderComponent implements OnInit {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
     },
-    initialView: 'dayGridMonth',
+    initialView: 'dayGridMonth', 
     initialEvents: INITIAL_EVENTS,
     weekends: true,
     editable: true,
@@ -78,7 +78,7 @@ export class FullCalenderComponent implements OnInit {
     select: this.handleDateSelect.bind(this),
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this),
-    /* you can update a remote database when these fire:
+    /* we can update a remote database when these fire:
 eventAdd:
 eventChange:
 eventRemove:

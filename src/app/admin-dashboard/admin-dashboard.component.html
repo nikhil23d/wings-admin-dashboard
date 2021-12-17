@@ -10,8 +10,8 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container>
-  <mat-sidenav #sidenav opened="true" mode="side">
+<mat-sidenav-container >
+  <mat-sidenav class="container" #sidenav opened="true" mode="side">
     <mat-nav-list>
       <!-- <a href=""><img src = "../admin-dashboard//dashboard1//user-circle-regular.jpg" alt="Avatar"/></a> -->
       <a mat-list-item [routerLink]="['/Dashboard-1']"
@@ -21,7 +21,7 @@
         ><span style="font-weight: bold">Calender</span></a
       >
       <a mat-list-item [routerLink]="['/Dashboard-3']"
-        ><span style="font-weight: bold">Dashboard 3</span></a
+        ><span style="font-weight: bold">Data Table</span></a
       >
       <a mat-list-item [routerLink]="['/Dashboard-4']"
         ><span style="font-weight: bold">Dashboard 4</span></a
