@@ -86,9 +86,9 @@ eventRemove:
   };
   currentEvents: EventApi[] = [];
 
-  handleCalendarToggle() {
-    this.calendarVisible = !this.calendarVisible;
-  }
+  // handleCalendarToggle() {
+  //   this.calendarVisible = !this.calendarVisible;
+  // }
 
   handleWeekendsToggle() {
     const { calendarOptions } = this;
