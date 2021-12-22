@@ -33,6 +33,9 @@ import { Dashboard4Component } from './admin-dashboard/dashboard4/dashboard4.com
 import { FullCalenderComponent } from './admin-dashboard/dashboard2/full-calender/full-calender.component';
 import { DataTableComponent } from './admin-dashboard/dashboard3/data-table/data-table.component';
 import { DataTableService } from './admin-dashboard/dashboard3/data-table/data-table.service';
+import { GithubUserComponent } from './admin-dashboard/dashboard4/github-user/github-user.component';
+import {GithubUserService} from './admin-dashboard/dashboard4/github-user/github-user.service';
+import { UsersComponent } from './admin-dashboard/dashboard4/users/users.component'
 
 
 
@@ -50,6 +53,8 @@ import { DataTableService } from './admin-dashboard/dashboard3/data-table/data-t
     Dashboard4Component,
     FullCalenderComponent,
     DataTableComponent,
+    GithubUserComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,7 @@ import { DataTableService } from './admin-dashboard/dashboard3/data-table/data-t
     MatInputModule
     
   ],
-  providers: [DataTableService],
+  providers: [DataTableService, GithubUserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
