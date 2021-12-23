@@ -1,4 +1,7 @@
-import { Component, OnInit,  } from '@angular/core';
+import { Component, Input, OnInit, ViewChild,  } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import {GithubUserService} from './github-user.service'
 
 @Component({
@@ -8,22 +11,40 @@ import {GithubUserService} from './github-user.service'
 })
 export class GithubUserComponent implements OnInit {
 
-  
+  @Input() users: string[] | any;
 
-  users:String[] | undefined 
+  displayedColumns = ['id', 'avatar_url', 'login', 'node_id', 'type', 'site_admin', 'url',   ];
+  dataSource!: MatTableDataSource<any>;
+  @ViewChild('paginator') paginator! : MatPaginator;
+  @ViewChild (MatSort) matSort! : MatSort;
 
-  constructor( private githubUserService:GithubUserService) { }
+  // users:String[] | undefined 
 
-  ngOnInit(): void {
+  constructor( private service :GithubUserService) { }
+
+  ngOnInit() {
+    this.service.getData().subscribe((response) => {
+      console.log(response);
+      this.users = response
+      this.dataSource = new MatTableDataSource(response);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.matSort;
+    })
   }
 
 getUsers(){
 
-  this.githubUserService.getData().subscribe((data) => {
-    console.log(data);
-    this.users = data
-  })
+  // this.service.getData().subscribe((response) => {
+  //   console.log(response);
+  //   this.users = response
+  //   this.dataSource = new MatTableDataSource(response);
+  //   this.dataSource.paginator = this.paginator;
+  //   this.dataSource.sort = this.matSort;
+  // })
   
+}
+filterData($event : any){
+  this.dataSource.filter = $event.target.value;
 }
 
 }

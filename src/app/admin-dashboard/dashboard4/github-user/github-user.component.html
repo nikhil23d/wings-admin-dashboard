@@ -1,13 +1,88 @@
-<div class="container">
+<!-- <div class="container">
 <button mat-raised-button (click)="getUsers()">Get GitHub Users Data</button>
-<br>
-<app-users [users]="users"></app-users>
-</div>
-<!-- <div>
-<p>{{GithubUser}}</p>
-</div> -->
+<br> 
 
-<!-- <ul *ngFor = "let GithubUser of GithubUsers">
-    <img src="{{GithubUser.avatar_url}}" alt="">
+ <ul *ngFor= "let user of users">
+    <li>{{user.id}}</li>
+    <li><img width="50" height="50" src="{{user.avatar_url}}" alt=""></li>
+    <li>{{user.login}}</li>
+    <li>{{user.node_id}}</li>
+    <li>{{user.type}}</li>
+    <li>{{user.site_admin}}</li>
+    <li>{{user.url}}</li>
+</ul> 
+</div>-->
 
-</ul> -->
+<div class="container">
+    <!-- //buttons -->
+    <br>
+    <div class="demo-button-container">
+        <button mat-raised-button  class="demo-button">
+          Add data
+        </button>
+        <button
+            mat-raised-button
+            class="demo-button"
+            >
+          Remove data
+        </button>
+      </div>
+        <div class="search-container">
+            <mat-form-field appearance="standard"  >
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Ex.Nik" autocomplete="off" (keyup)="filterData($event)">
+            </mat-form-field>
+        </div>
+    
+      <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+        
+        <ng-container matColumnDef="id">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>No.</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+          </ng-container>
+        
+        <ng-container matColumnDef="avatar_url">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef>Profile</th>
+          <td mat-cell *matCellDef="let element"><img width="50" height="50" src="{{element.avatar_url}}" alt=""></td>
+        </ng-container>
+    
+        <ng-container matColumnDef="login">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.login }}</td>
+          </ng-container>
+    
+        <ng-container matColumnDef="node_id">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef>Node ID</th>
+          <td mat-cell *matCellDef="let element">{{ element.node_id }}</td>
+        </ng-container>
+
+         <ng-container matColumnDef="type">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="site_admin">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>Site Admin</th>
+            <td mat-cell *matCellDef="let element">{{ element.site_admin }}</td>
+          </ng-container> 
+
+          <ng-container matColumnDef="url">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>URL</th>
+            <td mat-cell *matCellDef="let element">{{ element.url }}</td>
+          </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    <br>
+      <mat-paginator
+        #paginator
+        [pageSize]="10"
+        [pageSizeOptions]="[2, 5, 10, 25, 100]"
+      >
+      </mat-paginator>
+    </div>
+    
+
+
+
