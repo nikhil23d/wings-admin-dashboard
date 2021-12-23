@@ -35,7 +35,7 @@ import { DataTableComponent } from './admin-dashboard/dashboard3/data-table/data
 import { DataTableService } from './admin-dashboard/dashboard3/data-table/data-table.service';
 import { GithubUserComponent } from './admin-dashboard/dashboard4/github-user/github-user.component';
 import {GithubUserService} from './admin-dashboard/dashboard4/github-user/github-user.service';
-import { UsersComponent } from './admin-dashboard/dashboard4/users/users.component'
+
 
 
 
@@ -54,7 +54,7 @@ import { UsersComponent } from './admin-dashboard/dashboard4/users/users.compone
     FullCalenderComponent,
     DataTableComponent,
     GithubUserComponent,
-    UsersComponent,
+    
   ],
   imports: [
     BrowserModule,
