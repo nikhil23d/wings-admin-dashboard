@@ -1,15 +1,15 @@
-import { Component, Input, OnInit, ViewChild,  } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import {GithubUserService} from './github-user.service'
+import { GithubUserService } from './github-user.service';
 
 @Component({
-  selector: 'app-github-user',
-  templateUrl: './github-user.component.html',
-  styleUrls: ['./github-user.component.css']
+  selector: 'app-data-table',
+  templateUrl: './data-table.component.html',
+  styleUrls: ['./data-table.component.css']
 })
-export class GithubUserComponent implements OnInit {
+export class DataTableComponent implements OnInit {
 
   @Input() users: string[] | any;
 
@@ -17,8 +17,6 @@ export class GithubUserComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
   @ViewChild('paginator') paginator! : MatPaginator;
   @ViewChild (MatSort) matSort! : MatSort;
-
-  // users:String[] | undefined 
 
   constructor( private service :GithubUserService) { }
 
@@ -46,5 +44,7 @@ getUsers(){
 filterData($event : any){
   this.dataSource.filter = $event.target.value;
 }
+
+
 
 }

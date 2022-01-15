@@ -6,7 +6,7 @@
     <button mat-icon-button>
       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
     </button>
-    <h1>Admin Dashboard</h1>
+    <h5 style="margin-top: 3px;">Admin Dashboard</h5>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -14,18 +14,46 @@
   <mat-sidenav class="container" #sidenav opened="true" mode="side">
     <mat-nav-list>
       <!-- <a href=""><img src = "../admin-dashboard//dashboard1//user-circle-regular.jpg" alt="Avatar"/></a> -->
-      <a mat-list-item [routerLink]="['/Dashboard-1']"
-        ><span style="font-weight: bold">Apexcharts</span></a
+      <a mat-list-item [routerLink]="['/Dashboard']"
+        > <mat-icon> border_all</mat-icon> &nbsp;<span style="font-weight: bold">Dashboard</span></a
       >
-      <a mat-list-item [routerLink]="['/Dashboard-2']"
-        ><span style="font-weight: bold">Calender</span></a
+      
+      <a mat-list-item [routerLink]="['/Project']"
+        > <mat-icon>card_travel</mat-icon> &nbsp;<span style="font-weight: bold">Project</span></a
       >
-      <a mat-list-item [routerLink]="['/Dashboard-3']"
-        ><span style="font-weight: bold">Data Table</span></a
+
+      <!-- non used -->
+      <a mat-list-item
+        > <mat-icon>list_alt</mat-icon> &nbsp;<span style="font-weight: bold">Tasks</span></a
       >
-      <a mat-list-item [routerLink]="['/Dashboard-4']"
-        ><span style="font-weight: bold">GitHub User Data</span></a
+      <a mat-list-item
+        > <mat-icon>panorama_vertical</mat-icon> &nbsp;<span style="font-weight: bold">Kanban</span></a
       >
+      <a mat-list-item
+        > <mat-icon>date_range</mat-icon> &nbsp;<span style="font-weight: bold">Calender</span></a
+      >
+      <a mat-list-item
+        > <mat-icon>perm_identity</mat-icon> &nbsp;<span style="font-weight: bold">Contacts</span></a
+      >
+      <a mat-list-item
+        > <mat-icon> chat_bubble_outline</mat-icon> &nbsp;<span style="font-weight: bold">Messages</span></a
+      >
+      <a mat-list-item
+        > <mat-icon>work_outline</mat-icon> &nbsp;<span style="font-weight: bold">Products</span></a
+      >
+      <a mat-list-item
+        > <mat-icon>view_headline</mat-icon> &nbsp;<span style="font-weight: bold">Invoices</span></a
+      >
+      <a mat-list-item
+        > <mat-icon>folder_open</mat-icon> &nbsp;<span style="font-weight: bold">File Browsers</span></a
+      >
+      <a mat-list-item
+        > <mat-icon>notifications_none</mat-icon> &nbsp;<span style="font-weight: bold">Notification</span></a
+      >
+      
+
+
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

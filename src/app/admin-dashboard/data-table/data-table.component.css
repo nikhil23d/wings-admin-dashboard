@@ -24,3 +24,21 @@ table {
   .demo-button + .demo-button {
     margin-left: 8px;
   }
+
+  /* cards */
+
+  .example-card {
+    max-width: 250px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+  
+  .content{
+    padding: 16px;
+  }
+
+  /* .taskbtn{
+    align-items: center;
+  } */
