@@ -18,17 +18,19 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 //igx import
-// import { 
+// import {
 // 	IgxPaginatorModule,
 // 	IgxRippleModule,
 // 	IgxButtonGroupModule,
 // 	IgxButtonModule,
 // 	IgxIconModule,
 // 	IgxCardModule
-//  } from "igniteui-angular"; 
+//  } from "igniteui-angular";
 
 import { AppComponent } from './app.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -37,6 +39,16 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.component';
 import { DataTableComponent } from './admin-dashboard/data-table/data-table.component';
 import { CardDataComponent } from './admin-dashboard/data-table/card-data/card-data.component';
+import { CardComponent } from './admin-dashboard/dashboard/card/card.component';
+import { TasksComponent } from './admin-dashboard/tasks/tasks.component';
+import { KanbanComponent } from './admin-dashboard/kanban/kanban.component';
+import { CalenderComponent } from './admin-dashboard/calender/calender.component';
+import { ContactsComponent } from './admin-dashboard/contacts/contacts.component';
+import { MessagesComponent } from './admin-dashboard/messages/messages.component';
+import { ProductsComponent } from './admin-dashboard/products/products.component';
+import { InvoicesComponent } from './admin-dashboard/invoices/invoices.component';
+import { FileBrowsersComponent } from './admin-dashboard/file-browsers/file-browsers.component';
+import { NotificationsComponent } from './admin-dashboard/notifications/notifications.component';
 
 //I keep the new line
 @NgModule({
@@ -45,7 +57,17 @@ import { CardDataComponent } from './admin-dashboard/data-table/card-data/card-d
     AdminDashboardComponent,
     DashboardComponent,
     DataTableComponent,
-    CardDataComponent
+    CardDataComponent,
+    CardComponent,
+    TasksComponent,
+    KanbanComponent,
+    CalenderComponent,
+    ContactsComponent,
+    MessagesComponent,
+    ProductsComponent,
+    InvoicesComponent,
+    FileBrowsersComponent,
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,12 +88,11 @@ import { CardDataComponent } from './admin-dashboard/data-table/card-data/card-d
     MatInputModule,
     MatCardModule,
     FlexLayoutModule,
-    MatSlideToggleModule
-
-
+    MatSlideToggleModule,
+    HighchartsChartModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

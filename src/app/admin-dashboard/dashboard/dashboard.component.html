@@ -1,1 +1,128 @@
-<p>dashboard works!</p>
+<div>
+<mat-toolbar class="dash-header">
+  <span>Dashboard</span>
+</mat-toolbar>
+</div>
+<!-- percentage cards -->
+<div class="container">
+<div
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  fxLayoutGap="20px"
+  class="stats-cards"
+>
+  <mat-card fxFlex="25" class="widget">
+    <app-widget-card
+      label="New Sales"
+      total="1.345"
+      percentage="50"
+      [data]="cards"
+    ></app-widget-card>
+  </mat-card>
+  <mat-card fxFlex="25">
+    <app-widget-card
+      label="New Leads"
+      total="2.890"
+      percentage="40"
+      [data]="cards"
+    ></app-widget-card>
+  </mat-card>
+  <mat-card fxFlex="25">
+    <app-widget-card
+      label="Income Per Lead"
+      total="$1.898"
+      percentage="30"
+      [data]="cards"
+    ></app-widget-card>
+  </mat-card>
+  <mat-card fxFlex="25">
+    <app-widget-card
+      label="Conversion Rate"
+      total="5.10%"
+      percentage="20"
+      [data]="cards"
+    ></app-widget-card>
+  </mat-card>
+</div>
+<br />
+<mat-divider></mat-divider>
+
+<!-- table -->
+
+
+  <mat-toolbar>
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button> -->
+    <span>Latest Sales</span>
+    <span class="example-spacer"></span>
+    <button mat-button class="example-event" aria-label="Day">
+      <span>Day</span>
+    </button> &nbsp;
+    <button mat-button class="example-event" aria-label="Week">
+      <span>Week</span></button
+    >&nbsp; 
+    <button mat-button class="example-event" aria-label="Month">
+      <span>Month</span></button
+    >
+    <button mat-icon-button class="example-event" aria-label="Event">
+      <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker ></mat-datepicker> -->
+      <mat-icon >event</mat-icon>
+    </button> 
+  </mat-toolbar>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex.Nik"
+      #input
+    />
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="progress">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Progress</th>
+        <td mat-cell *matCellDef="let row">{{ row.progress }}%</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="fruit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Fruit</th>
+        <td mat-cell *matCellDef="let row">{{ row.fruit }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br />
+  <mat-paginator
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page of users"
+  ></mat-paginator>
+</div>

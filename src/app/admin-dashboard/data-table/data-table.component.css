@@ -1,44 +1,59 @@
-.container{
+.project-header {
+  border: 55px !important;
+  border: #000 !important;
+  box-shadow: 0 5px 12px -1px rgb(5, 79, 199);
+}
+
+.container {
   padding: 20px;
 }
 
 table {
-    width: 100%;
-  }
+  width: 100%;
+  box-shadow: 0 5px 12px -1px rgb(5, 79, 199);
+}
 
-  th{
-    font-weight: bold;
-    font-size: 1rem;
-    
-  }
+th {
+  font-weight: bold;
+  font-size: 1rem;
+}
 
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
 
-  .demo-button-container {
-    padding-bottom: 16px;
-  }
-  
-  .demo-button + .demo-button {
-    margin-left: 8px;
-  }
+.demo-button-container {
+  padding-bottom: 16px;
+}
 
-  /* cards */
+.demo-button + .demo-button {
+  margin-left: 8px;
+}
 
-  .example-card {
-    max-width: 250px;
-  }
-  
-  .example-header-image {
-    background-size: cover;
-  }
-  
-  .content{
-    padding: 16px;
-  }
+/* cards */
 
-  /* .taskbtn{
+.example-card {
+  max-width: 250px;
+  border: 55px !important;
+  border-radius: 30px !important;
+  border: #000 !important;
+  box-shadow: 0 5px 12px -1px rgb(5, 79, 199);
+  /* overflow-x: auto; */
+}
+
+/* .example-card::-webkit-scrollbar{
+  width: 0;
+} */
+
+.example-header-image {
+  background-size: cover;
+}
+
+.content {
+  padding: 16px;
+}
+
+/* .taskbtn{
     align-items: center;
   } */

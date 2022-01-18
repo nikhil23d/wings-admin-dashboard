@@ -1,0 +1,44 @@
+.dash-header {
+  border: 55px !important;
+  border: #000 !important;
+  box-shadow: 0 5px 12px -1px rgb(5, 79, 199);
+  
+}
+
+.container {
+  padding: 20px;
+}
+.stats-cards .mat-card {
+  overflow: hidden;
+  margin-top: 1rem;
+  margin: 10px;
+  max-width: 250px;
+  border: 55px !important;
+  border-radius: 30px !important;
+  border: #000 !important;
+  box-shadow: 0 5px 12px -1px rgb(5, 79, 199);
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-event{
+  font-size: 16px;
+}
+
+table {
+  width: 100%;
+  box-shadow: 0 5px 12px -1px rgb(5, 79, 199);
+  padding: 16px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}

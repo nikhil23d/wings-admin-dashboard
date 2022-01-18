@@ -1,113 +1,186 @@
+<div>
+<mat-toolbar class="project-header">
+  <span>Projects</span>
+</mat-toolbar>
+</div>
 <div class="container">
-<!-- //buttons -->
-<br>
-<div class="demo-button-container">
-    <button mat-raised-button color="primary" class="demo-button" >
+  <!-- //buttons -->
+  <br />
+
+  <div class="demo-button-container">
+    <button
+      mat-raised-button
+      color="primary"
+      class="demo-button"
+      (click)="toggleClick('list')"
+    >
       <mat-icon>view_list</mat-icon>List
     </button>
     <button
-        mat-raised-button
-        class="demo-button" color="primary"
-        >
-        <mat-icon>view_module</mat-icon> Grid
+      mat-raised-button
+      class="demo-button"
+      color="primary"
+      (click)="toggleClick('grid')"
+    >
+      <mat-icon>view_module</mat-icon> Grid
     </button>
   </div>
-    <div class="search-container">
-        <mat-form-field appearance="standard"  >
-            <mat-label>Search</mat-label>
-            <input matInput placeholder="Ex.Nik" autocomplete="off" (keyup)="filterData($event)">
-        </mat-form-field>
-    </div>
+  <!-- 
+  <div id="view" class="e-btn-group">
+    <input type="radio" id="left" name="align" value="1" (click)="changeDisplay(1)"/>
+    <label class="e-btn" for="left">Grid View</label>
+    <input type="radio" id="right" name="align" value="2" (click)="changeDisplay(2)"/>
+    <label class="e-btn" for="right">List View</label>
+  </div> -->
 
-    <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
-        
-      <ng-container matColumnDef="id">
-          <th mat-header-cell mat-sort-header *matHeaderCellDef>No.</th>
-          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-        </ng-container>
-      
-      <ng-container matColumnDef="avatar_url">
-        <th mat-header-cell mat-sort-header *matHeaderCellDef>Profile</th>
-        <td mat-cell *matCellDef="let element"><img width="50" height="50" src="{{element.avatar_url}}" alt=""></td>
-      </ng-container>
-  
-      <ng-container matColumnDef="login">
-          <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
-          <td mat-cell *matCellDef="let element">{{ element.login }}</td>
-        </ng-container>
-  
-      <ng-container matColumnDef="node_id">
-        <th mat-header-cell mat-sort-header *matHeaderCellDef>Node ID</th>
-        <td mat-cell *matCellDef="let element">{{ element.node_id }}</td>
-      </ng-container>
+  <div class="search-container">
+    <mat-form-field appearance="standard">
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        placeholder="Ex.Nik"
+        autocomplete="off"
+        (keyup)="filterData($event)"
+      />
+    </mat-form-field>
+  </div>
 
-       <ng-container matColumnDef="type">
-          <th mat-header-cell mat-sort-header *matHeaderCellDef>Type</th>
-          <td mat-cell *matCellDef="let element">{{ element.type }}</td>
-        </ng-container>
+  <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
 
-        <ng-container matColumnDef="site_admin">
-          <th mat-header-cell mat-sort-header *matHeaderCellDef>Site Admin</th>
-          <td mat-cell *matCellDef="let element">{{ element.site_admin }}</td>
-        </ng-container> 
+    <ng-container matColumnDef="avatar_url">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>Profile</th>
+      <td mat-cell *matCellDef="let element">
+        <img width="50" height="50" src="{{ element.avatar_url }}" alt="" />
+      </td>
+    </ng-container>
 
-        <ng-container matColumnDef="url">
-          <th mat-header-cell mat-sort-header *matHeaderCellDef>URL</th>
-          <td mat-cell *matCellDef="let element">{{ element.url }}</td>
-        </ng-container>
+    <ng-container matColumnDef="login">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.login }}</td>
+    </ng-container>
 
-        <!-- <ng-container matColumnDef="Toggle">
+    <ng-container matColumnDef="node_id">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>Node ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.node_id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="site_admin">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>Site Admin</th>
+      <td mat-cell *matCellDef="let element">{{ element.site_admin }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="url">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>URL</th>
+      <td mat-cell *matCellDef="let element">{{ element.url }}</td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="Toggle">
           <th mat-header-cell mat-sort-header *matHeaderCellDef>Toggle</th>
           <td mat-cell *matCellDef="let element"><mat-slide-toggle>Slide me!</mat-slide-toggle>
           </td>
         </ng-container> -->
-        
 
-        <!-- <ng-container matColumnDef="toggle">
+    <!-- <ng-container matColumnDef="toggle">
           <th mat-header-cell mat-sort-header *matHeaderCellDef>Toggle</th>
           <td mat-cell *matCellDef="let element">{{ element.toggle }}</td>
         </ng-container> -->
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
-<br>
 
-<div class="content">
-<div fxLayout="row wrap" fxLayoutGap="Grid">
-  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4]">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Projects {{num}}</mat-card-title>
-        <mat-card-subtitle>Dribble Website</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small.
-        </p>
-      </mat-card-content>
-      <mat-card-actions class="row text-center h-100"> &nbsp; &nbsp; &nbsp; &nbsp;
-        <button color="primary"  mat-button> <strong>20/45</strong>   
-          <br> Tasks</button> 
-        <button color="accent" mat-button> <strong> $3.2k</strong>
-         <br> Budget</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-</div>
-
-</div>
-
-<!-- <app-card-data></app-card-data> -->
-
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <br />
   <mat-paginator
     #paginator
-    [pageSize]="4"
+    [pageSize]="5"
     [pageSizeOptions]="[2, 5, 10, 25, 100]"
   >
   </mat-paginator>
+  <br>
+  <mat-divider></mat-divider>
+<br>
+  <div class="content" >
+    <div fxLayout="row wrap" fxLayoutGap="Grid">
+      <!-- list view -->
+      <ng-container *ngIf="listAndGridView == 'list'">
+        <div
+          fxFlex="100%"
+          fxFlex.xs="100%"
+          fxFlex.sm="33%"
+          *ngFor="let num of [1, 2, 3, 4]"
+        >
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Projects {{ num }}</mat-card-title>
+              <mat-card-subtitle>Dribble Website</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct
+                spitz breeds of dog from Japan. A small.
+              </p>
+            </mat-card-content>
+            <mat-card-actions class="row text-center h-100">
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <button color="primary" mat-button>
+                <strong>20/45</strong> <br />
+                Tasks
+              </button>
+              <button color="accent" mat-button>
+                <strong> $3.2k</strong> <br />
+                Budget
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <br />
+      </ng-container>
+
+      <!-- grid view -->
+      <ng-container *ngIf="listAndGridView == 'grid'">
+        <div
+          fxFlex="25%"
+          fxFlex.xs="100%"
+          fxFlex.sm="33%"
+          *ngFor="let num of [1, 2, 3, 4]"
+        >
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Projects {{ num }}</mat-card-title>
+              <mat-card-subtitle>Dribble Website</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct
+                spitz breeds of dog from Japan. A small.
+              </p>
+            </mat-card-content>
+            <mat-card-actions class="row text-center h-100">
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <button color="primary" mat-button>
+                <strong>20/45</strong> <br />
+                Tasks
+              </button>
+              <button color="accent" mat-button>
+                <strong> $3.2k</strong> <br />
+                Budget
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- <app-card-data></app-card-data> -->
 </div>
-
-
