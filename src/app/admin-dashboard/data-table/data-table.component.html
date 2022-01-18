@@ -1,7 +1,7 @@
 <div>
-<mat-toolbar class="project-header">
-  <span>Projects</span>
-</mat-toolbar>
+  <mat-toolbar class="project-header">
+    <span>Projects</span>
+  </mat-toolbar>
 </div>
 <div class="container">
   <!-- //buttons -->
@@ -104,12 +104,15 @@
     [pageSizeOptions]="[2, 5, 10, 25, 100]"
   >
   </mat-paginator>
-  <br>
+
+  <br />
   <mat-divider></mat-divider>
-<br>
-  <div class="content" >
+  <br />
+
+  <div class="content">
     <div fxLayout="row wrap" fxLayoutGap="Grid">
       <!-- list view -->
+
       <ng-container *ngIf="listAndGridView == 'list'">
         <div
           fxFlex="100%"
@@ -117,7 +120,7 @@
           fxFlex.sm="33%"
           *ngFor="let num of [1, 2, 3, 4]"
         >
-          <mat-card class="example-card">
+          <mat-card class="example-listcard">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Projects {{ num }}</mat-card-title>
@@ -152,6 +155,7 @@
           fxFlex.xs="100%"
           fxFlex.sm="33%"
           *ngFor="let num of [1, 2, 3, 4]"
+          class="scrollCard"
         >
           <mat-card class="example-card">
             <mat-card-header>

@@ -42,6 +42,24 @@ th {
   /* overflow-x: auto; */
 }
 
+/* .scrollCard{
+  overflow-x: auto;
+  display: flex;
+}
+
+.scrollCard::-webkit-scrollbar {
+  display: none;
+} */
+
+.example-listcard {
+  border: 55px !important;
+  border-radius: 30px !important;
+  border: #000 !important;
+  box-shadow: 0 5px 12px -1px rgb(5, 79, 199);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 /* .example-card::-webkit-scrollbar{
   width: 0;
 } */
