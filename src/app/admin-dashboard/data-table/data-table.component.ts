@@ -42,15 +42,16 @@ export class DataTableComponent implements OnInit {
     this.listAndGridView = 'grid';
   }
 
-  getUsers() {
-    // this.service.getData().subscribe((response) => {
-    //   console.log(response);
-    //   this.users = response
-    //   this.dataSource = new MatTableDataSource(response);
-    //   this.dataSource.paginator = this.paginator;
-    //   this.dataSource.sort = this.matSort;
-    // })
-  }
+  // getUsers() {
+  //   this.service.getData().subscribe((response) => {
+  //     console.log(response);
+  //     this.users = response
+  //     this.dataSource = new MatTableDataSource(response);
+  //     this.dataSource.paginator = this.paginator;
+  //     this.dataSource.sort = this.matSort;
+  //   })
+  // }
+  
   filterData($event: any) {
     this.dataSource.filter = $event.target.value;
   }
